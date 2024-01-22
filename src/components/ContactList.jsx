@@ -34,13 +34,13 @@ const ContactList = ({ setPhonebook, phonebook, filteredContacts }) => {
 ContactList.propTypes = {
   phonebook: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
-  setPhonebook: PropTypes.string,
-  filteredContacts: PropTypes.string
+  setPhonebook: PropTypes.string.isRequired,
+  filteredContacts: PropTypes.string.isRequired
 };
 export default ContactList;
 
