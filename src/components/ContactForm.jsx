@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const ContactForm = ({ phonebook, setPhonebook }) => {
   const [contact, setContact] = useState({
@@ -60,6 +61,14 @@ const ContactForm = ({ phonebook, setPhonebook }) => {
       <button type="submit">Add contact</button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  phonebook: PropTypes.shape({
+    contacts: PropTypes.array.isRequired,
+    filter: PropTypes.string.isRequired,
+  }).isRequired,
+  setPhonebook: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
